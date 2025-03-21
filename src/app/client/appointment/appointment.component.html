@@ -1,0 +1,35 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <!-- Header -->
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Book a Diagnosis</h4>
+                        <p class="card-category">Schedule a repair appointment for your car</p>
+                    </div>
+
+                    <!-- Form Body -->
+                    <div class="card-body">
+                        <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Select Date</mat-label>
+                                <input matInput [matDatepicker]="picker" formControlName="date" [matDatepickerFilter]="isDateDisabled">
+                                <mat-datepicker-toggle matIconButton [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Describe the Symptoms</mat-label>
+                                <textarea matInput formControlName="symptoms" rows="3"></textarea>
+                            </mat-form-field>
+
+                            <button mat-raised-button color="primary" type="submit" [disabled]="!appointmentForm.valid">
+                                Book Appointment
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -28,7 +28,7 @@ export class SignUpComponent {
 
   onSubmit() {
     if (this.signUpForm.valid) {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/signin']);
     }
   }
 }

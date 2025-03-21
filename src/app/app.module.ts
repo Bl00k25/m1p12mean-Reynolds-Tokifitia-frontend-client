@@ -8,6 +8,9 @@ import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AuthModule } from './auth/auth.module';
+import { ListRepairsComponent } from './client/list-repairs/list-repairs.component';
+import { AppointmentComponent } from './client/appointment/appointment.component';
+import { ClientModule } from './client/client.module';
 
 @NgModule({
   imports: [
@@ -18,11 +21,14 @@ import { AuthModule } from './auth/auth.module';
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
-    AuthModule
+    AuthModule,
+    ClientModule
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    ListRepairsComponent,
+    AppointmentComponent,
 
   ],
   providers: [],
