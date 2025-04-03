@@ -10,6 +10,10 @@ import { TypographyComponent } from '../../typography/typography.component';
 import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
+import { SignInComponent } from 'app/auth/sign-in/sign-in.component';
+import { SignUpComponent } from 'app/auth/sign-up/sign-up.component';
+import { ListRepairsComponent } from 'app/client/list-repairs/list-repairs.component';
+import { AppointmentComponent } from 'app/client/appointment/appointment.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
@@ -17,6 +21,8 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core'; 
 
 @NgModule({
   imports: [
@@ -30,6 +36,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   declarations: [
     DashboardComponent,
@@ -40,6 +48,10 @@ import {MatSelectModule} from '@angular/material/select';
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    ListRepairsComponent,
+    SignInComponent,
+    SignUpComponent,
+    AppointmentComponent
   ]
 })
 
