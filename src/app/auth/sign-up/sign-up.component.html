@@ -5,10 +5,10 @@
         <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
             
             <div class="form-group">
-                <label for="firstName">Prénom</label>
-                <input type="text" class="form-control" id="firstName" formControlName="firstName">
-                <div *ngIf="signUpForm.get('firstName')?.invalid && signUpForm.get('firstName')?.touched" class="text-danger">
-                    <small *ngIf="signUpForm.get('firstName')?.errors?.['required']">Le prénom est obligatoire.</small>
+                <label for="firstname">Prénom</label>
+                <input type="text" class="form-control" id="firstname" formControlName="firstname">
+                <div *ngIf="signUpForm.get('firstname')?.invalid && signUpForm.get('firstname')?.touched" class="text-danger">
+                    <small *ngIf="signUpForm.get('firstname')?.errors?.['required']">Le prénom est obligatoire.</small>
                 </div>
             </div>
             
@@ -47,5 +47,7 @@
             
             <button type="submit" class="btn btn-danger w-100 mt-3" [disabled]="signUpForm.invalid">S'inscrire</button>
         </form>
-    </div>
+        <div class="text-center">
+            <small>Vous avez déjà un compte ? <a routerLink="../signin">Se connecter</a></small></div>
+        </div>
 </div>

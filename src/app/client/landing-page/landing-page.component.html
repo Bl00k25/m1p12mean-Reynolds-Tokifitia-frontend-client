@@ -1,0 +1,55 @@
+<div class="min-h-screen">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fs-2 fw-bold text-dark" href="#"><b>Garage Auto</b></a>
+      <div class="d-flex align-items-center">
+        <button class="btn btn-outline-danger rounded-pill me-3" (click)="signup()">Inscription</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="position-relative bg-dark" style="height: 600px;">
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-cover" 
+         style="background-image: url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80'); opacity: 0.4;"></div>
+    <div class="container h-100 position-relative">
+      <div class="h-100 d-flex align-items-center text-white">
+        <div class="py-5">
+          <h2 class="display-4 fw-bold mb-4">Entretien Auto Expert</h2>
+          <p class="lead mb-4" style="max-width: 600px;">
+            Service professionnel pour tous vos besoins automobiles. Faites confiance à notre équipe expérimentée pour maintenir votre voiture en parfait état.
+          </p>
+          <button class="btn btn-orange btn-lg" (click)="signin()">Prendre Rendez-vous</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <div class="py-5 bg-white">
+    <div class="container">
+      <h2 class="text-center mb-5 display-5 fw-bold">Nos Services</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="p-4 bg-light rounded">
+            <h3 class="h4 fw-semibold mb-3">Entretien</h3>
+            <p class="text-muted">Maintenance régulière et mises au point pour garder votre véhicule en bon état.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-light rounded">
+            <h3 class="h4 fw-semibold mb-3">Réparations</h3>
+            <p class="text-muted">Services de diagnostic et de réparation experts pour toutes les marques et modèles.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-light rounded">
+            <h3 class="h4 fw-semibold mb-3">Diagnostics</h3>
+            <p class="text-muted">Équipement de diagnostic de pointe pour identifier tous les problèmes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
