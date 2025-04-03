@@ -1,68 +1,51 @@
-<div class="main-content">
-    <div class="container-fluid">
-        <div class="row"><div class="col-md-8">
-            <div class="card">
-                <div class="card-header card-header-danger">
-                    <h4 class="card-title">Sign Up</h4>
-                    <p class="card-category">Create your account</p>
-                </div>
-                <div class="card-body">
-                    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-                        <div class="row">
-                            <div class="col-md-6">
-                            <mat-form-field class="example-full-width">
-                                <input matInput placeholder="First Name" formControlName="firstName" required>
-                                <mat-error *ngIf="signUpForm.get('firstName')?.hasError('required')">
-                                First name is required
-                                </mat-error>
-                            </mat-form-field>
-                            </div>
-                            <div class="col-md-6">
-                            <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Last Name" formControlName="lastName" required>
-                                <mat-error *ngIf="signUpForm.get('lastName')?.hasError('required')">
-                                Last name is required
-                                </mat-error>
-                            </mat-form-field>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                            <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Email" formControlName="email" type="email" required>
-                                <mat-error *ngIf="signUpForm.get('email')?.hasError('required')">
-                                Email is required
-                                </mat-error>
-                                <mat-error *ngIf="signUpForm.get('email')?.hasError('email')">
-                                Invalid email format
-                                </mat-error>
-                            </mat-form-field>
-                            </div>
-                        </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                        <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Password" formControlName="password" type="password" required>
-                            <mat-error *ngIf="signUpForm.get('password')?.hasError('required')">
-                            Password is required
-                            </mat-error>
-                        </mat-form-field>
-                        </div>
-                        <div class="col-md-6">
-                        <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Confirm Password" formControlName="confirmPassword" type="password" required>
-                            <mat-error *ngIf="signUpForm.get('confirmPassword')?.hasError('required')">
-                            Please confirm your password
-                            </mat-error>
-                        </mat-form-field>
-                        </div>
-                        </div>
-                        <button mat-raised-button type="submit" class="btn btn-danger pull-right">Sign Up</button>
-                        <div class="clearfix"></div>
-                    </form>
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-lg" style="width: 400px;">
+        <h3 class="text-center mb-4">Inscription</h3>
+        <app-alert [message]="alertMessage" [type]="alertType"></app-alert>
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+            
+            <div class="form-group">
+                <label for="firstName">Prénom</label>
+                <input type="text" class="form-control" id="firstName" formControlName="firstName">
+                <div *ngIf="signUpForm.get('firstName')?.invalid && signUpForm.get('firstName')?.touched" class="text-danger">
+                    <small *ngIf="signUpForm.get('firstName')?.errors?.['required']">Le prénom est obligatoire.</small>
                 </div>
             </div>
-        </div>
+            
+            <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" class="form-control" id="name" formControlName="name">
+                <div *ngIf="signUpForm.get('name')?.invalid && signUpForm.get('name')?.touched" class="text-danger">
+                    <small *ngIf="signUpForm.get('name')?.errors?.['required']">Le nom est obligatoire.</small>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Adresse e-mail</label>
+                <input type="email" class="form-control" id="email" formControlName="email">
+                <div *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched" class="text-danger">
+                    <small *ngIf="signUpForm.get('email')?.errors?.['required']">L'e-mail est obligatoire.</small>
+                    <small *ngIf="signUpForm.get('email')?.errors?.['email']">Format d'e-mail invalide.</small>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" class="form-control" id="password" formControlName="password">
+                <div *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched" class="text-danger">
+                    <small *ngIf="signUpForm.get('password')?.errors?.['required']">Le mot de passe est requis.</small>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPassword">Confirmer le mot de passe</label>
+                <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword">
+                <div *ngIf="signUpForm.get('confirmPassword')?.invalid && signUpForm.get('confirmPassword')?.touched" class="text-danger">
+                    <small *ngIf="signUpForm.get('confirmPassword')?.errors?.['required']">Veuillez confirmer votre mot de passe.</small>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-danger w-100 mt-3" [disabled]="signUpForm.invalid">S'inscrire</button>
+        </form>
     </div>
-</div>
 </div>
