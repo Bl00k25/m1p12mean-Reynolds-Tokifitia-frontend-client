@@ -43,7 +43,6 @@ import { UserProfileComponent } from '../../user-profile/user-profile.component'
     ReactiveFormsModule,
     RouterModule.forChild(AdminLayoutRoutes)
   ],
-
   declarations: [
     AlertComponent,
     AppointmentComponent,

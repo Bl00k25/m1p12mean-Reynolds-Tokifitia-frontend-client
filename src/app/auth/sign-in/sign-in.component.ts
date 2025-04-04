@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'app/services/auth.service';
-import { response } from 'express';
+import { AuthService } from 'app/services/auth/auth.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -32,6 +31,7 @@ export class SignInComponent {
       this.authService.SignClientIn(this.signInForm.value).subscribe(
         (response) => {
           console.log('Sign-in response:', response);
+          this.authService.SetClientToken(response.clientId);
           this.router.navigate(['/dashboard']);
         },
         (error ) => {

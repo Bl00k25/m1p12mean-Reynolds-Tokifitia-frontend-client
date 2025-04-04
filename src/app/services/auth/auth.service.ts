@@ -10,6 +10,14 @@ export class AuthService {
   private apiUrl = environment.BASE_URL+'/api/clients';
   constructor(private http: HttpClient) { }
 
+  SetClientToken(token: string) {
+    sessionStorage.setItem('clientID', token);
+  }
+
+  GetClientToken() {
+    return sessionStorage.getItem('clientID');
+  }
+  
   SignClientIn(credentials: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/signin`, credentials);
   }
