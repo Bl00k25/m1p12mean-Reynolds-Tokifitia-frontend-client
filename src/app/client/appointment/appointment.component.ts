@@ -78,7 +78,6 @@ export class AppointmentComponent implements OnInit {
           }
         },
         (error) => {
-          console.error('Error creating appointment', error);
           this.alertMessage = "Une erreur s'est produite. Veuillez contacter l'administrateur.";
           this.alertType = 'error';
         }
