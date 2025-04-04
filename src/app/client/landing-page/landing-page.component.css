@@ -1,0 +1,27 @@
+/* Custom Orange Theme */
+.btn-orange {
+    background-color: #FF5722;
+    border-color: #FF5722;
+    color: white;
+    border-radius: 50px;
+    padding: 0.5rem 2rem;
+  }
+  
+  .btn-orange:hover {
+    background-color: #E64A19;
+    border-color: #E64A19;
+    color: white;
+  }
+  
+  .btn-orange-outline {
+    border: 2px solid #FF5722;
+    color: #FF5722;
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+  }
+  
+  .btn-orange-outline:hover {
+    background-color: #FF5722;
+    color: white;
+  }
+  

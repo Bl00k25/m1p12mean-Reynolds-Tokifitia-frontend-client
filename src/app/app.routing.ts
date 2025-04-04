@@ -6,8 +6,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
+import { LandingPageComponent } from './client/landing-page/landing-page.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: LandingPageComponent
+  },
   {
     path: 'signup',
     component: SignUpComponent,

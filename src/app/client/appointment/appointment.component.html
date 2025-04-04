@@ -5,26 +5,60 @@
                 <div class="card">
                     <!-- Header -->
                     <div class="card-header card-header-danger">
-                        <h4 class="card-title">Book a Diagnosis</h4>
-                        <p class="card-category">Schedule a repair appointment for your car</p>
+                        <h4 class="card-title">Prendre un Rendez-vous</h4>
+                        <p class="card-category">Planifiez un rendez-vous pour le diagnostic de votre voiture</p>
                     </div>
-
                     <!-- Form Body -->
                     <div class="card-body">
+                        <app-alert [message]="alertMessage" [type]="alertType"></app-alert>
                         <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
                             <mat-form-field appearance="outline">
-                                <mat-label>Select Date</mat-label>
-                                <input matInput [matDatepicker]="picker" formControlName="date" [matDatepickerFilter]="isDateDisabled">
+                                <mat-label>Sélectionner une date</mat-label>
+                                <input matInput [matDatepicker]="picker" formControlName="date" [matDatepickerFilter]="isDateDisabled" required>
                                 <mat-datepicker-toggle matIconButton [for]="picker"></mat-datepicker-toggle>
                                 <mat-datepicker #picker></mat-datepicker>
                             </mat-form-field>
+
                             <mat-form-field appearance="outline">
-                                <mat-label>Describe the Symptoms</mat-label>
-                                <textarea matInput formControlName="symptoms" rows="3"></textarea>
+                                <mat-label>Décrire les symptômes</mat-label>
+                                <textarea matInput formControlName="description" rows="3" ></textarea>
                             </mat-form-field>
 
+                            <div class="form-group">
+                                <label class="btn btn-primary w-100">
+                                  <span class="material-icons"> cloud_upload</span>
+                                  Télécharger une image (facultatif)
+                                  <input 
+                                    type="file" 
+                                    (change)="onFileSelected($event)" 
+                                    class="d-none"
+                                    accept="image/*"
+                                  >
+                                </label>
+                                
+                                <div *ngIf="selectedFile" class="mt-2">
+                                  <p class="mb-1 text-muted">
+                                    <span class="material-icons">file_image</span>
+                                    {{ selectedFile.name }}
+                                    <small>({{ selectedFile.size / 1024 | number:'1.0-0' }} KB)</small>
+                                  </p>
+                                </div>
+                          
+                                <div *ngIf="imagePreview" class="mt-3">
+                                  <p class="text-muted mb-1">Aperçu :</p>
+                                  <div class="border rounded p-2" style="max-width: 300px;">
+                                    <img 
+                                      [src]="imagePreview" 
+                                      alt="Preview" 
+                                      class="img-fluid rounded"
+                                      style="max-height: 200px;"
+                                    >
+                                  </div>
+                                </div>
+                              </div>
+
                             <button mat-raised-button color="primary" type="submit" [disabled]="!appointmentForm.valid">
-                                Book Appointment
+                                Réserver le rendez-vous
                             </button>
                         </form>
                     </div>
